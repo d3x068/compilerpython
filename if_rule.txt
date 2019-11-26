@@ -1,8 +1,14 @@
-rule_if -> 'if' char ':' suite
-suite -> char '<newline>'
-suite -> '<newline>' statement
-statement -> char '<newline>'
-char -> '(' char ')'
+rule_if -> A char C
+C -> B suite
+B -> ':'
+A -> 'if'
+suite -> char N
+N -> '<newline>'
+suite -> N statement
+statement -> char 'N
+char -> K char L
+K -> '('
+L -> ')'
 char -> 'a'
 char -> 'b'
 char -> 'c'

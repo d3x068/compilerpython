@@ -1,2 +1,2 @@
-if a:
-    r
+if (angga):
+    return false
