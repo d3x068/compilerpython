@@ -1,3 +1,2 @@
-I shot in elephant an my pajamas
-I shot an pajamas in my elephant
-I shot an elephant in my pajamas
+if a:
+    r
