@@ -3,10 +3,148 @@ Terminals:
 Variables:
 Expr Term AddOp MulOp Factor Primary
 Productions:
-Expr -> Term | Expr AddOp Term | AddOp Term;
-Term -> Factor | Term MulOp Factor;
-Factor -> Primary | Factor ^ Primary;
-Primary -> number | variable;
+Expr -> Term;
+Expr -> Expr AddOp Term;
+Expr -> AddOp Term;
+Term -> Factor;
+Term -> Term MulOp Factor;
+Factor -> Primary;
+Factor -> Factor ^ Primary;
+Primary -> number;
+Primary -> variable;
 Primary -> ( Expr );
-AddOp -> + | -;
-MulOp -> * | /
+AddOp -> +;
+AddOp -> -;
+MulOp -> *;
+MulOp -> /;
+
+
+compound_stmt -> if_stmt;
+compound_stmt -> while_stmt;
+compound_stmt -> for_stmt;
+compound_stmt -> try_stmt;
+compound_stmt -> with_stmt;
+compound_stmt -> funcdef;
+compound_stmt -> classdef;
+suite -> stmt_list NEWLINE;
+suite -> NEWLINE INDENT statement+ DETENT;
+statement -> stmt_list NEWLINE;
+statement -> compound_stmt;
+stmt_list -> simple_stmt Za Zb;
+Za -> e;
+Za -> ";" simple_stmt;
+Za -> Za ";" simple_stmt;
+Zb -> e;
+Zb -> ";"
+
+if_stmt -> "if" Expr ":" suite '<newline>' A '<newline>' Z;
+A -> e;
+A -> "elif" Expr ":" suite;
+A -> A "elif" Expr ":" suite;
+Z -> e;
+Z -> "else" ":" suite;
+
+while_stmt -> "while" Expr ":" suite '<newline>' Z;
+for_stmt -> "for" target_list "in" expression_list ":" suite '<newline>' Z;
+with_stmt -> "with" with_item F ":" suite;
+F -> e;
+F -> "," with_item;
+F -> F "," with_item;
+
+with_item -> Expr B;
+B -> e;
+B -> "as" target;
+
+funcdef -> C "def" funcname "(" D ")" '<newline>' E ":" suite;
+C -> decorators;
+C -> e;
+D -> parameter_list;
+D -> e;
+E -> "->" Expr;
+E -> e;
+decorators -> decorator+;
+decorator -> "@" dotted_name G '<newline>';
+G -> e;
+G -> "(" H ")";
+H -> e;
+H -> argument_list I;
+I -> e;
+I -> ",";
+dotted_name -> identifier J;
+J -> e;
+J -> "." identifier;
+J -> J "." identifier;
+parameter_list -> defparameter K "," "/" L;
+K -> e;
+K -> "," defparameter;
+K -> K "," defparameter;
+L -> e;
+L -> "," M;
+M -> e;
+M -> parameter_list_no_posonly;
+parameter_list -> parameter_list_no_posonly;
+parameter_list_no_posonly -> defparameter N O;
+N -> e;
+N -> "," defparameter;
+N -> N "," defparameter;
+O -> e;
+O -> "," P;
+P -> e;
+P -> parameter_list_starargs;
+parameter_list_no_posonly   -> parameter_list_starargs;
+parameter_list_starargs     -> "*" Q N R;
+Q -> e;
+Q -> parameter;
+R -> e;
+R -> "," S;
+S -> e;
+S -> "**" parameter I;
+parameter_list_starargs -> "**" parameter I;
+parameter                   -> identifier T;
+T -> e;
+T -> ":" Expr;
+defparameter                -> parameter U;
+U -> e;
+U -> "=" Expr;
+funcname -> identifier;
+classdef -> V "class" classname W ":" suite;
+V -> e;
+V -> decorators;
+W -> e;
+W -> inheritance;
+inheritance ->  "(" X ")";
+X -> e;
+X -> argument_list;
+classname   ->  identifier;
+
+
+or_test -> and_test Y;
+Y -> e;
+Y -> 'or' and_test;
+Y -> Y 'or' and_test;
+and_test-> not_test vara;
+vara -> e;
+vara -> 'and' not_test;
+vara -> vara 'and' not_test;
+not_test-> 'not' not_test;
+not_test-> comparison;
+comparison-> Expr varb;
+varb -> e;
+varb -> comp_op Expr;
+varb -> varb comp_op Expr;
+comp_op -> '<';
+comp_op -> '>';
+comp_op -> '==';
+comp_op -> '>=';
+comp_op -> '<=';
+comp_op -> '<>';
+comp_op -> '!=';
+comp_op -> 'in';
+comp_op -> 'not' 'in';
+comp_op -> 'is';
+comp_op -> 'is' 'not';
+
+false_stmt -> "False";
+none -> "None";
+true -> "True"
+

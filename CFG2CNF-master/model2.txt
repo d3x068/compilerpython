@@ -3,5 +3,8 @@ Variables:
 S A X
 Productions:
 S -> a X b;
-X -> a Y | b Y | e;
-Y -> X | c
+X -> a Y;
+X -> b Y;
+X -> e;
+Y -> X;
+Y -> c
