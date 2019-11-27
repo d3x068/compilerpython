@@ -1,0 +1,10 @@
+Terminals:
+if : <newline> elif else tesExpr tessuite ( )
+Variables:
+if_stmt A Z Expr suite
+Productions:
+if_stmt -> if Expr : suite A Z;
+A -> e | elif Expr : suite | A elif Expr : suite;
+Z -> e | else : suite;
+Expr -> ( Expr ) | tesExpr;
+suite -> <newline> suite <newline> | suite <newline> | <newline> suite | tessuite

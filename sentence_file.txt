@@ -1,2 +1,76 @@
-if (angga):
-    return false
+if (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+else :
+    tessuite
+
+if (tesExpr) :
+    tessuite
+else :
+    tessuite
+
+if (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+else :
+    tessuite
+
+if (tesExpr) :
+    tessuite
+else :
+    tessuite
+if (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+else :
+    tessuite
+
+if (tesExpr) :
+    tessuite
+else :
+    tessuite
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+if (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+elif (tesExpr) :
+    tessuite
+else :
+    tessuite
+
+if (tesExpr) :
+    tessuite
+else :
+    tessuite

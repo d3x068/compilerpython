@@ -1,0 +1,25 @@
+A4 -> A | Z W | A | Z X | Z X
+A -> A | Z X | Z X
+ZZ -> ' i f '
+ZY -> ' : '
+if_stmt -> Z Z
+A1 -> E x p r
+A2 -> Z Y
+A3 -> s u i t e
+ZX -> ' e l i f '
+B1 -> E x p r
+B2 -> Z Y
+C1 -> Z X
+C2 -> E x p r
+C3 -> Z Y
+ZW -> ' e l s e '
+Z -> Z W
+D1 -> Z Y
+ZU -> ' ( '
+ZT -> ' ) '
+Expr -> Z U | ' t e s E x p r '
+E1 -> E x p r
+ZS -> ' < n e w l i n e > '
+suite -> Z S | s u i t e | Z S | ' t e s s u i t e '
+F1 -> s u i t e
+S0 -> Z Z
