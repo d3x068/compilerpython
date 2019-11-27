@@ -208,5 +208,10 @@ comp_op -> 'is' 'not';
 
 false_stmt -> "False";
 none -> "None";
-true -> "True"
+true -> "True";
 
+identifier -> xid_start xid_continue*;
+id_start -> <all characters in general categories Lu, Ll, Lt, Lm, Lo, Nl, the underscore, and characters with the Other_ID_Start property>;
+id_continue -> <all characters in id_start, plus characters in the categories Mn, Mc, Nd, Pc and others with the Other_ID_Continue property>;
+xid_start -> <all characters in id_start whose NFKC normalization is in "id_start xid_continue*">;
+xid_continue -> <all characters in id_continue whose NFKC normalization is in "id_continue*">
