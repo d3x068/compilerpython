@@ -1,0 +1,17 @@
+Terminals:
+if : <newline> elif else tesExpr tessuite ( ) a b c > >= < <= = == is
+Variables:
+if_stmt A Z newline Expr suite identifier opcon 
+Productions:
+if_stmt -> if Expr : suite A Z;
+A -> e | elif Expr : suite | A elif Expr : suite;
+Z -> e | else : suite;
+Expr -> ( Expr ) | tesExpr;
+suite -> newline suite newline | tessuite;
+newline -> e;
+newline -> <newline>;
+newline -> newline <newline>;
+identifier -> a | b | c;
+Expr -> identifier opcon identifier;
+Expr -> ( Expr );
+opcon -> > | >= | < | <= | = | == | is

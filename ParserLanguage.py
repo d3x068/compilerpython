@@ -486,6 +486,7 @@ def run_main():
     grammar_file = "CNF_out.txt"
     sentence_file = str(input('Masukkan Nama File Input : '))
     CYK = Parser(grammar_file, sentence_file)
+    #print(CYK.grammar)
     for i in range(len(CYK.input)):
         CYK.parse(i)
         Accepted =  Accepted and CYK.print_tree()

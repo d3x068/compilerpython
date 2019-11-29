@@ -1,25 +1,133 @@
-A4 -> A | Z W | A | Z X | Z X
-A -> A | Z X | Z X
-ZZ -> ' i f '
-ZY -> ' : '
-if_stmt -> Z Z
-A1 -> E x p r
-A2 -> Z Y
-A3 -> s u i t e
-ZX -> ' e l i f '
-B1 -> E x p r
-B2 -> Z Y
-C1 -> Z X
-C2 -> E x p r
-C3 -> Z Y
-ZW -> ' e l s e '
-Z -> Z W
-D1 -> Z Y
-ZU -> ' ( '
-ZT -> ' ) '
-Expr -> Z U | ' t e s E x p r '
-E1 -> E x p r
-ZS -> ' < n e w l i n e > '
-suite -> Z S | s u i t e | Z S | ' t e s s u i t e '
-F1 -> s u i t e
-S0 -> Z Z
+import_stmt -> n e w l i n e | n e w l i n e | Z T | Z T
+K2 -> i d e n t i f i e r | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+L4 -> i d e n t i f i e r | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+N1 -> n e w l i n e | Z P
+P4 -> n e w l i n e | Z R | i f _ s t m t | e l i f _ s t m t | Z P
+newline -> n e w l i n e | ' < n e w l i n e > '
+T4 -> n e w l i n e | Z O | n e w l i n e | ' < n e w l i n e > ' | n e w l i n e | ' < n e w l i n e > ' | n e w l i n e | ' < n e w l i n e > '
+W6 -> n e w l i n e | Z O | n e w l i n e | ' < n e w l i n e > ' | n e w l i n e | ' < n e w l i n e > ' | n e w l i n e | ' < n e w l i n e > '
+suite -> s t m t _ l i s t | n e w l i n e | s i m p l e _ s t m t | s t m t _ l i s t | n e w l i n e | s i m p l e _ s t m t | Z R | i f _ s t m t | e l i f _ s t m t | Z P | Z F
+statement -> s t m t _ l i s t | s i m p l e _ s t m t | Z R | i f _ s t m t | e l i f _ s t m t | Z P
+return_stmt -> n e w l i n e | Z F
+AD4 -> Z Y | ' ) '
+X2 -> F | Z Q
+F -> F | Z J | Z J
+Z1 -> i d e n t i f i e r | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+raise_stmt -> Z G | ' r a i s e '
+R -> E x p r | i d e n t i f i e r | Z Z
+with_item -> E x p r | i d e n t i f i e r | Z Z
+AC1 -> Z a | Z a | ' F a l s e ' | Z Z | ' T r u e ' | Z Z | Z Z | s i m p l e _ s t m t | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z ' | Z Z | s i m p l e _ s t m t | i d e n t i f i e r | Z Z | Z U | Z Z
+Za -> Z a | ' F a l s e ' | Z Z | ' T r u e ' | Z Z | Z Z | s i m p l e _ s t m t | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z ' | Z Z | s i m p l e _ s t m t | i d e n t i f i e r | Z Z | Z U | Z Z
+false_stmt -> ' F a l s e ' | Z Z
+ZZ -> ' ( '
+ZY -> ' ) '
+A1 -> f a l s e _ s t m t
+none_stmt -> ' N o n e ' | Z Z
+B1 -> n o n e _ s t m t
+true_stmt -> ' T r u e ' | Z Z
+C1 -> t r u e _ s t m t
+break_stmt -> ' b r e a k ' | Z Z
+D1 -> b r e a k _ s t m t
+continue_stmt -> ' c o n t i n u e ' | Z Z
+E1 -> c o n t i n u e _ s t m t
+and_stmt -> Z Z | s i m p l e _ s t m t
+F1 -> a n d _ s t m t
+ZX -> ' a n d '
+G1 -> Z X
+or_stmt -> Z Z | s i m p l e _ s t m t
+H1 -> o r _ s t m t
+ZW -> ' o r '
+I1 -> Z W
+ZU -> ' n o t '
+not_stmt -> Z U | Z Z
+J1 -> n o t _ s t m t
+ZT -> ' i m p o r t '
+K1 -> Z T
+ZS -> ' a s '
+L1 -> Z T
+L2 -> i d e n t i f i e r
+L3 -> Z S
+ZR -> ' i f '
+ZQ -> ' : '
+if_stmt -> Z R
+M1 -> E x p r
+M2 -> Z Q
+ZP -> ' e l i f '
+elif_stmt -> i f _ s t m t | e l i f _ s t m t | Z P
+N2 -> Z P
+N3 -> E x p r
+N4 -> Z Q
+O1 -> Z P
+O2 -> E x p r
+O3 -> Z Q
+P1 -> E x p r
+P2 -> Z Q
+P3 -> s u i t e
+ZO -> ' e l s e '
+else_stmt -> i f _ s t m t | e l i f _ s t m t | c o m p o u n d _ s t m t
+Q1 -> Z O
+Q2 -> Z Q
+R1 -> Z O
+R2 -> Z Q
+S1 -> Z O
+S2 -> Z Q
+ZN -> ' w h i l e '
+while_stmt -> Z N
+T1 -> E x p r
+T2 -> Z Q
+T3 -> s u i t e
+Z -> Z O
+U1 -> Z Q
+ZM -> ' f o r '
+ZL -> ' i n '
+for_stmt -> Z M
+W1 -> i d e n t i f i e r
+W2 -> Z L
+W3 -> i d e n t i f i e r
+W4 -> Z Q
+W5 -> s u i t e
+ZK -> ' w i t h '
+with_stmt -> Z K
+X1 -> w i t h _ i t e m
+X3 -> Z Q
+ZJ -> ' , '
+Y1 -> Z J
+ZI -> ' f r o m '
+from_stmt -> Z I
+in_stmt -> i d e n t i f i e r
+AA1 -> Z L
+ZH -> ' i s '
+is_stmt -> i d e n t i f i e r
+AB1 -> Z H
+pass_stmt -> ' p a s s '
+ZG -> ' r a i s e '
+B -> Z S
+stmt_list -> s i m p l e _ s t m t
+ZF -> ' r e t u r n '
+AD1 -> Z F
+AD2 -> Z Z
+AD3 -> s i m p l e _ s t m t
+ZE -> ' o p c o n '
+Expr -> i d e n t i f i e r | Z Z
+AE1 -> Z E
+AF1 -> E x p r
+identifier -> ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+ZD -> ' > '
+opcon -> Z D | Z C | Z B | Z A | Y Z | Y Y | Z H | Y X | Y W | Y U | Y T
+ZC -> ' > = '
+ZB -> ' < '
+ZA -> ' < = '
+YZ -> ' = '
+YY -> ' = = '
+YX -> ' + '
+YW -> ' - '
+YU -> ' \ '
+YT -> ' * '
+start -> n e w l i n e | ' < n e w l i n e > ' | Z R | Z N | n e w l i n e | n e w l i n e | i d e n t i f i e r | Z Z | n e w l i n e | ' < n e w l i n e > ' | n e w l i n e | ' < n e w l i n e > ' | Z T | Z T | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z ' | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+simple_stmt -> ' F a l s e ' | Z Z | ' T r u e ' | Z Z | Z Z | s i m p l e _ s t m t | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z ' | Z Z | s i m p l e _ s t m t | i d e n t i f i e r | Z Z | Z U | Z Z
+compound_stmt -> Z R | i f _ s t m t | e l i f _ s t m t | Z P
+class_stmt -> ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+def_stmt -> ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z '
+T -> n e w l i n e | n e w l i n e | Z T | Z T
+S -> Z I
+S0 -> n e w l i n e | ' < n e w l i n e > ' | Z R | Z N | n e w l i n e | n e w l i n e | Z T | Z T | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z ' | ' a ' | ' b ' | ' c ' | ' d ' | ' f ' | ' g ' | ' h ' | ' i ' | ' j ' | ' k ' | ' l ' | ' m ' | ' n ' | ' o ' | ' p ' | ' q ' | ' r ' | ' s ' | ' t ' | ' u ' | ' v ' | ' w ' | ' x ' | ' y ' | ' z ' | i d e n t i f i e r | Z Z

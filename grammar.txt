@@ -1,0 +1,6 @@
+Terminals:
+A
+Variables:
+hai
+Productions:
+hai -> a

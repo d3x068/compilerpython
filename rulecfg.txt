@@ -1,0 +1,74 @@
+Terminals:
+False ( ) return > >= < <= = == is None True break continue and or not import as <newline> if elif else for from while with a b c d f g h i j k l m n o p q r s t u v w x y z opcon : , raise pass is in + - \ *
+Variables:
+start return_stmt false_stmt simple_stmt none_stmt true_stmt break_stmt continue_stmt and_stmt Expr or_stmt not_stmt as_stmt import_stmt compound_stmt newline if_stmt elif_stmt else_stmt for_stmt from_stmt while_stmt with_stmt Z B suite statement stmt_list Za Zb identifier class_stmt def_stmt F T in_stmt is_stmt pass_stmt raise_stmt R S target_list with_item expression_list 
+Productions:
+start -> if_stmt | newline | while_stmt | import_stmt | def_stmt | class_stmt | Expr;
+simple_stmt -> false_stmt | true_stmt | and_stmt | identifier | or_stmt | Expr | not_stmt;
+false_stmt -> False;
+false_stmt -> ( false_stmt );
+none_stmt -> None;
+none_stmt -> ( none_stmt );
+true_stmt -> True;
+true_stmt -> ( true_stmt );
+break_stmt -> break;
+break_stmt -> ( break_stmt );
+continue_stmt -> continue;
+continue_stmt -> ( continue_stmt );
+and_stmt -> ( and_stmt );
+and_stmt -> simple_stmt and simple_stmt;
+or_stmt -> ( or_stmt );
+or_stmt -> simple_stmt or simple_stmt;
+not_stmt -> not simple_stmt;
+not_stmt -> ( not_stmt );
+import_stmt -> newline import identifier newline;
+import_stmt -> newline import identifier as identifier newline;
+compound_stmt -> if_stmt | elif_stmt;
+if_stmt -> if Expr : suite;
+elif_stmt -> if_stmt <newline> elif Expr : suite;
+elif_stmt -> elif_stmt elif Expr : suite;
+elif_stmt -> elif Expr : suite <newline> compound_stmt;
+else_stmt -> if_stmt else : suite;
+else_stmt -> elif_stmt else : suite;
+else_stmt -> compound_stmt else : suite;
+newline -> e;
+newline -> <newline>;
+newline -> newline <newline>;
+class_stmt -> identifier;
+def_stmt -> identifier;
+while_stmt -> while Expr : suite newline Z;
+Z -> e;
+Z -> else : suite;
+for_stmt -> for identifier in identifier : suite newline Z;
+with_stmt -> with with_item F : suite;
+F -> e;
+F -> , with_item;
+F -> F , with_item;
+from_stmt -> from identifier T;
+T -> e;
+T -> import_stmt;
+in_stmt -> identifier in identifier;
+is_stmt -> identifier is identifier;
+pass_stmt -> pass;
+raise_stmt -> raise R;
+R -> e;
+R -> Expr S;
+S -> e;
+S -> from_stmt;
+with_item -> Expr B;
+B -> e;
+B -> as identifier;
+suite -> return_stmt | stmt_list newline;
+suite -> newline statement; 
+statement -> stmt_list newline;
+statement -> compound_stmt;
+stmt_list -> simple_stmt Za Zb;
+return_stmt -> newline return ( simple_stmt ) newline;
+Za -> e;
+Za -> simple_stmt;
+Za -> Za simple_stmt;
+Zb -> e;
+Expr -> identifier opcon simple_stmt;
+Expr -> ( Expr );
+identifier -> a | b | c | d | f | g | h | i | j | k | l | m | n | o | p | q | r | s | t | u | v | w | x | y | z;
+opcon -> > | >= | < | <= | = | == | is | + | - | \ | *
